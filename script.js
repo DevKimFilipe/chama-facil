@@ -1,64 +1,56 @@
-const themeButton =
-document.getElementById("themeButton");
+/* -------------------------------------------------------------------
+   TEMA CLARO / ESCURO
+   ------------------------------------------------------------------- */
+const themeButton = document.getElementById("themeButton");
 
 themeButton.addEventListener("click", () => {
-
-    document.body.classList.toggle(
-        "dark"
-    );
-
+    document.body.classList.toggle("dark");
+    const escuro = document.body.classList.contains("dark");
+    themeButton.textContent = escuro ? "Modo diurno" : "Modo noturno";
+    localStorage.setItem("tema-chama-facil", escuro ? "dark" : "light");
 });
 
-document
-.querySelectorAll(".faq-question")
-.forEach(button => {
+if (localStorage.getItem("tema-chama-facil") === "dark") {
+    document.body.classList.add("dark");
+    themeButton.textContent = "Modo diurno";
+}
 
-    button.addEventListener("click", () => {
+/* -------------------------------------------------------------------
+   FAQ 
+   ------------------------------------------------------------------- */
+document.querySelectorAll(".faq-pergunta").forEach(botao => {
+    botao.addEventListener("click", () => {
+        const resposta = botao.nextElementSibling;
+        const estaAberta = resposta.classList.contains("aberta");
 
-        const answer =
-        button.nextElementSibling;
-
-        if(answer.style.display === "block"){
-            answer.style.display = "none";
-        }else{
-            answer.style.display = "block";
-        }
-
+        resposta.classList.toggle("aberta", !estaAberta);
+        botao.setAttribute("aria-expanded", String(!estaAberta));
     });
-
 });
 
-const form =
-document.getElementById("contactForm");
+/* -------------------------------------------------------------------
+   FORMULÁRIO DE CONTATO
+   ------------------------------------------------------------------- */
+const form = document.getElementById("contactForm");
+const resultadoForm = document.getElementById("resultadoForm");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (evento) => {
+    evento.preventDefault();
 
-    e.preventDefault();
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
 
-    const nome =
-    document.getElementById("nome").value;
+    resultadoForm.className = "";
 
-    const email =
-    document.getElementById("email").value;
-
-    const mensagem =
-    document.getElementById("mensagem").value;
-
-    if(
-        nome === "" ||
-        email === "" ||
-        mensagem === ""
-    ){
-        alert(
-            "Preencha todos os campos."
-        );
+    if (nome === "" || email === "" || mensagem === "") {
+        resultadoForm.textContent = "Por favor, preencha todos os campos antes de enviar.";
+        resultadoForm.classList.add("erro");
         return;
     }
 
-    alert(
-        "Mensagem enviada com sucesso!"
-    );
+    resultadoForm.textContent = "Mensagem enviada com sucesso! Em breve entraremos em contato.";
+    resultadoForm.classList.add("sucesso");
 
     form.reset();
-
 });

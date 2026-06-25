@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chama Fácil</title>
+    <title>Chama Fácil — mobilidade simples para quem mais precisa</title>
+    <meta name="description" content="Protótipo de aplicativo de transporte pensado para idosos, com interface simplificada e acessível.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,161 +17,137 @@
 <body>
 
 <header>
-
     <div class="logo">
+        <span class="logo-icone" aria-hidden="true">☀</span>
         Chama Fácil
     </div>
 
     <nav>
-
         <a href="#inicio">Início</a>
-        <a href="#problema">Problema</a>
-        <a href="#solucao">Solução</a>
+        <a href="#problema">O problema</a>
+        <a href="#solucao">A solução</a>
         <a href="#beneficios">Benefícios</a>
         <a href="#contato">Contato</a>
-
     </nav>
 
-    <button id="themeButton">
-        🌙
+    <button id="themeButton" type="button" aria-label="Aumentar contraste / alternar tema">
+        Modo noturno
     </button>
-
 </header>
 
 <section id="inicio" class="hero">
 
     <div class="hero-text">
-
+        <p class="hero-selo">protótipo acadêmico</p>
         <h1>
-            Mobilidade simples para quem mais precisa.
+            Mobilidade simples<br>para quem mais precisa.
         </h1>
-
-        <p>
-            Um aplicativo pensado especialmente para idosos que desejam utilizar transporte por aplicativo de forma segura e intuitiva.
+        <p class="hero-descricao">
+            Um aplicativo pensado especialmente para idosos que desejam
+            utilizar transporte por aplicativo de forma segura, tranquila
+            e sem complicação.
         </p>
-
-        <button>
-            Conheça o Projeto
-        </button>
-
+        <a href="#solucao" class="botao-grande">Conheça o projeto</a>
     </div>
 
 </section>
 
 <section id="problema">
-
-    <h2>O Problema</h2>
-
-    <p>
-        Muitos idosos encontram dificuldades para utilizar aplicativos modernos de transporte devido à quantidade excessiva de informações, botões pequenos e interfaces complexas.
+    <p class="rotulo-secao">o ponto de partida</p>
+    <h2>O problema</h2>
+    <p class="texto-largo">
+        Muitos idosos encontram dificuldade para usar aplicativos modernos
+        de transporte. Telas com informação demais, botões pequenos e
+        fluxos confusos acabam afastando justamente quem mais precisaria
+        dessa comodidade no dia a dia.
     </p>
-
 </section>
 
 <section id="solucao">
-
-    <h2>Nossa Solução</h2>
+    <p class="rotulo-secao">o que estamos propondo</p>
+    <h2>Nossa solução</h2>
 
     <div class="cards">
 
         <div class="card">
-            <h3>Interface Simplificada</h3>
-            <p>Menus intuitivos e fáceis de compreender.</p>
+            <span class="card-numero">1</span>
+            <h3>Interface simplificada</h3>
+            <p>Menus diretos, com poucas opções por tela e linguagem clara.</p>
         </div>
 
         <div class="card">
-            <h3>Botões Maiores</h3>
-            <p>Melhor acessibilidade visual.</p>
+            <span class="card-numero">2</span>
+            <h3>Botões maiores</h3>
+            <p>Elementos fáceis de tocar, com bom contraste e texto legível.</p>
         </div>
 
         <div class="card">
-            <h3>Fluxo Guiado</h3>
-            <p>Passo a passo para solicitar corridas.</p>
+            <span class="card-numero">3</span>
+            <h3>Fluxo guiado</h3>
+            <p>Passo a passo simples para pedir uma corrida, sem etapas escondidas.</p>
         </div>
 
     </div>
-
 </section>
 
 <section id="beneficios">
-
+    <p class="rotulo-secao">por que isso importa</p>
     <h2>Benefícios</h2>
 
-    <ul>
-
+    <ul class="lista-beneficios">
         <li>Mais independência para idosos</li>
-        <li>Facilidade de utilização</li>
-        <li>Experiência acessível</li>
-        <li>Maior inclusão digital</li>
-
+        <li>Facilidade real de utilização</li>
+        <li>Experiência pensada para todos</li>
+        <li>Mais inclusão digital</li>
     </ul>
-
 </section>
 
 <section id="faq">
-
-    <h2>Perguntas Frequentes</h2>
+    <p class="rotulo-secao">tire suas dúvidas</p>
+    <h2>Perguntas frequentes</h2>
 
     <div class="faq-item">
-
-        <button class="faq-question">
-            O aplicativo substitui Uber?
+        <button class="faq-pergunta" aria-expanded="false">
+            <span>O aplicativo substitui o Uber?</span>
+            <span class="faq-seta" aria-hidden="true">+</span>
         </button>
-
-        <div class="faq-answer">
-            Não. O objetivo é simplificar a experiência de uso para idosos.
+        <div class="faq-resposta">
+            <p>Não. O objetivo é simplificar a experiência de uso para idosos, e não competir com os aplicativos já existentes.</p>
         </div>
-
     </div>
 
     <div class="faq-item">
-
-        <button class="faq-question">
-            O projeto está em desenvolvimento?
+        <button class="faq-pergunta" aria-expanded="false">
+            <span>O projeto está em desenvolvimento?</span>
+            <span class="faq-seta" aria-hidden="true">+</span>
         </button>
-
-        <div class="faq-answer">
-            Sim. Atualmente é um protótipo acadêmico.
+        <div class="faq-resposta">
+            <p>Sim. Atualmente é um protótipo acadêmico, ainda em fase de estudo e validação de ideias.</p>
         </div>
-
     </div>
-
 </section>
 
 <section id="contato">
-
+    <p class="rotulo-secao">vamos conversar</p>
     <h2>Contato</h2>
 
-    <form id="contactForm">
+    <form id="contactForm" novalidate>
+        <label for="nome">Seu nome</label>
+        <input type="text" id="nome" placeholder="Digite seu nome">
 
-        <input
-            type="text"
-            id="nome"
-            placeholder="Seu nome">
+        <label for="email">Seu e-mail</label>
+        <input type="email" id="email" placeholder="Digite seu e-mail">
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Seu e-mail">
+        <label for="mensagem">Sua mensagem</label>
+        <textarea id="mensagem" placeholder="Escreva sua mensagem aqui"></textarea>
 
-        <textarea
-            id="mensagem"
-            placeholder="Sua mensagem"></textarea>
-
-        <button type="submit">
-            Enviar
-        </button>
-
+        <button type="submit" class="botao-grande">Enviar mensagem</button>
+        <p id="resultadoForm" role="status"></p>
     </form>
-
 </section>
 
 <footer>
-
-    <p>
-        Projeto acadêmico desenvolvido por Kim Borges.
-    </p>
-
+    <p>Projeto acadêmico desenvolvido por Kim Borges.</p>
 </footer>
 
 <script src="script.js"></script>
